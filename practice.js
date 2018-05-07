@@ -43,9 +43,15 @@ var groceries= ['apples', 'milk', 'eggs', 'bread']
 //If the array does not contain "chocolate", add "chocolate".
 //doubleCheck should return the array.
 
-let doubleCheck = function(arr) {
-  
+let doubleCheck = function(groceries) {
+  if(groceries.indexOf('chocolate') === -1 ) {
+    groceries.push('chocolate')
+  } 
+    return groceries;
 }
+
+doubleCheck(groceries);
+
 
 //////////////////PROBLEM 5////////////////////
 
@@ -96,8 +102,15 @@ let ruff = dog.bark();
 
 let looper = function(arr){
     var mySum = 0;
-    
+    for (var i = 0; i < arr.length; i++) {
+      if( arr[i] % 2 !== 0 || arr[i] >= 100) {
+        mySum += arr[i];
+      }
+    }
+    return mySum;
 }
+
+looper([2, 4, 5 , 1000, 3]);
 
 //////////////////PROBLEM 7////////////////////
 
@@ -166,28 +179,32 @@ function pond() {
 //as strings.
 
 //This array should contain the variable names (as strings) accessible in the global scope.
-let globalScope = ["duck", "sailorDuck", "rubberDuck", "realDuck"];
+let globalScope = ["duck"];
 
 //This array should contain the variable names (as strings) accessible in the bathroom function.
-let bathroomScope = ["duck", "sailorDuck", "rubberDuck", "realDuck"];
+let bathroomScope = ["duck", "rubberDuck"];
 
 //This array should contain the variable names (as strings) accessible in the bathtub function.
-let bathtubScope = ["duck", "sailorDuck", "rubberDuck", "realDuck"];
+let bathtubScope = ["duck", "rubberDuck", "sailorDuck"];
 
 //This array should contain the variable names (as strings) accessible in the pond function.
-let pondScope = ["duck", "sailorDuck", "rubberDuck", "realDuck"];
+let pondScope = ["duck", "realDuck"];
 
 //////////////////PROBLEM 10////////////////////
 
 //Create a function called outerFn which returns an anonymous
 //function which returns your name.
 
-//Code Here
+let outerFn = function() {
+ return function(){
+   return 'Andy';
+ }
+}
 
 //Now save the result of invoking outerFn into a variable called innerFn.
 
-//Code Here
+var innerFn = outerFn();
 
 //Now invoke innerFn and save the result to a variable called finalResult.
 
-//Code Here
+var finalResult = innerFn();
