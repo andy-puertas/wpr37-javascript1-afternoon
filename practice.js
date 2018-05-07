@@ -27,6 +27,7 @@ let newGreeting = function(name){
 //Name it finalGreeting.
 
 
+let finalGreeting = (name) => "Hello, " + name;
 
 
 //////////////////PROBLEM 4////////////////////
@@ -34,7 +35,7 @@ let newGreeting = function(name){
 //Create an array called groceries with the values
 //"apples", "milk", "eggs", "bread"
 
-//Code Here
+var groceries= ['apples', 'milk', 'eggs', 'bread']
 
 //Write a function called doubleCheck that takes in an array
 //as a parameter.
@@ -42,7 +43,9 @@ let newGreeting = function(name){
 //If the array does not contain "chocolate", add "chocolate".
 //doubleCheck should return the array.
 
-//Code Here
+let doubleCheck = function(arr) {
+  
+}
 
 //////////////////PROBLEM 5////////////////////
 
@@ -51,21 +54,33 @@ let newGreeting = function(name){
 //name (a string), color: (a string), age (a number),
 //and goodBoy (a boolean).
 
-//Code Here
+var dog = {
+  name: 'Jeff',
+  color: 'Green',
+  age: 5,
+  goodBoy: true 
+}
+
 
 //...access the dog's name from the object and assign it to a
 //variable called devMountainClassPet.
 
-//Code Here
+var devMountainClassPet = dog.name;
 
 //Add a method to dog called bark.
 //The value of bark should be a function that returns the string "Woof woof".
 
-//Code Here
+dog.bark = function() {
+  return 'Woof woof'
+};
+
+
 
 //Store the result of invoking the bark method in a variable called ruff.
 
-//Code Here
+
+let ruff = dog.bark();
+
 
 //////////////////PROBLEM 6////////////////////
 
@@ -78,7 +93,11 @@ let newGreeting = function(name){
 
 //Return mySum.
 
-//Code Here
+
+let looper = function(arr){
+    var mySum = 0;
+    
+}
 
 //////////////////PROBLEM 7////////////////////
 
@@ -91,12 +110,19 @@ function math(num1, num2, callback) {
 //Write a function called add that takes in two parameters and
 //returns the result of adding them together.
 
-//Code Here
+let add = function(param1, param2) {
+    return param1 + param2;
+}
+
 
 //Now invoke math, passing in the numbers 3 and 4, and your add function,
 //storing the result in the variable mathSum.
 
-//Code Here
+math(3, 4, add);
+
+var mathSum = math(3, 4, add);
+
+
 
 //////////////////PROBLEM 8////////////////////
 
@@ -111,7 +137,12 @@ function sampleCallbackTwo() {
   return "I am also a callback function";
 }
 
-//Code Here
+
+let invoker = function(cb) {
+  return cb();
+}
+
+invoker(sampleCallbackOne);
 
 //////////////////PROBLEM 9////////////////////
 
